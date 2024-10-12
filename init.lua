@@ -333,7 +333,25 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        defaults = {},
+        pickers = {
+          find_files = {
+            -- hidden = true,
+            find_command = { 'rg', '--files', '--hidden', '--color=never', '--glob', '!.git/*' },
+          },
+          live_grep = {
+            grep_open_files = false, -- search all files, not just open ones
+            additional_args = function(opts)
+              return { '--hidden', '--glob', '!.git/*' }
+            end,
+          },
+          grep_string = {
+            grep_open_files = false, -- search all files, not just open ones
+            additional_args = function(opts)
+              return { '--hidden', '--glob', '!.git/*' }
+            end,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
