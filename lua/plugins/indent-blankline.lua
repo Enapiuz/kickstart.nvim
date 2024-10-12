@@ -26,12 +26,18 @@ return {
 
       require('ibl').setup {
         -- indent = { highlight = highlight },
+        indent = {
+          char = '▏', -- This is a slightly thinner char than the default one, check :help ibl.config.indent.char
+        },
         exclude = {
           filetypes = {
             'dashboard',
           },
         },
       }
+
+      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
     end,
   },
 }
