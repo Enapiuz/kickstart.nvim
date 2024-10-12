@@ -26,6 +26,11 @@ return {
 
       require('ibl').setup {
         -- indent = { highlight = highlight },
+        exclude = {
+          filetypes = {
+            'dashboard',
+          },
+        },
       }
     end,
   },
