@@ -925,13 +925,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    init = function()
-      vim.keymap.set('n', '<leader>n', '<Cmd>Neotree toggle<CR>', { desc = '[N]eotree Toggle' })
-    end,
-  },
+
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
