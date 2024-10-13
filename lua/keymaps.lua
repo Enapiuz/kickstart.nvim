@@ -11,3 +11,9 @@ keymap.set('n', '<leader>bb', ':bp<CR>', { desc = 'Previous buffer' })
 -- Lazy
 keymap.set('n', '<leader>ll', ':Lazy<CR>', { desc = 'Lazy' })
 keymap.set('n', '<leader>lm', ':Mason<CR>', { desc = 'Mason' })
+
+-- Moving lines up and down
+keymap.set('n', '<A-]>', ':m .+1<CR>==') -- move line up(n)
+keymap.set('n', '<A-[>', ':m .-2<CR>==') -- move line down(n)
+keymap.set('v', '<A-]>', ":m '>+1<CR>gv=gv") -- move line up(v)
+keymap.set('v', '<A-[>', ":m '<-2<CR>gv=gv") -- move line down(v)
