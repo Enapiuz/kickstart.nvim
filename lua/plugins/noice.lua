@@ -14,16 +14,6 @@ return {
   },
   config = function()
     require('noice').setup {
-      cmdline = {
-        view = 'cmdline_popup',
-        opts = {
-          position = {
-            row = '50%',
-            col = '50%',
-            anchor = 'center',
-          },
-        },
-      },
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
