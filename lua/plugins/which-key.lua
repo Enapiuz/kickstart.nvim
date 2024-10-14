@@ -51,6 +51,7 @@ return {
         { '<leader>h', group = '[H]arpoon', mode = { 'n', 'v' } },
         { '<leader>l', group = '[L]azy' },
         { '<leader>b', group = '[B]uffer' },
+        { '<leader>g', group = '[G]it' },
       },
     },
   },
