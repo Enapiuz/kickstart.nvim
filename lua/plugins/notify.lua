@@ -4,7 +4,7 @@ return {
     priority = 1000, -- Make sure to load this before all the other start plugins.
     event = 'VimEnter',
     opts = {
-      timeout = 3000,
+      timeout = 7000,
       stages = 'static',
       render = 'wrapped-compact',
       max_height = function()
