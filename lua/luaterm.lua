@@ -50,10 +50,14 @@ local function toggle_term()
   -- Case 2: Find the most recent terminal buffer
   local bufnr = find_most_recent_terminal_buffer()
 
+  local total_width = vim.api.nvim_get_option 'columns'
+  local terminal_width = math.floor(total_width * 0.35)
+
   -- If no terminal exists, create a new one in a vertical split
   if bufnr == nil or not vim.api.nvim_buf_is_loaded(bufnr) then
     notify('New terminal in vertical split', 'info', { title = 'terminals.lua', timeout = 150 })
     vim.api.nvim_command 'vsplit | terminal'
+    vim.api.nvim_command('vertical resize ' .. terminal_width)
     vim.api.nvim_command 'startinsert'
     return
   end
@@ -61,6 +65,7 @@ local function toggle_term()
   -- Case 3: In a non-terminal, go to the most recent terminal in a vertical split
   vim.api.nvim_command 'vsplit'
   vim.api.nvim_set_current_buf(bufnr)
+  vim.api.nvim_command('vertical resize ' .. terminal_width)
   vim.api.nvim_command 'startinsert'
 end
 
