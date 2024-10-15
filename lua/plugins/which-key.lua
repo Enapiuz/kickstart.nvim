@@ -52,6 +52,7 @@ return {
         { '<leader>l', group = '[L]azy' },
         { '<leader>b', group = '[B]uffer' },
         { '<leader>g', group = '[G]it' },
+        { '<leader>j', group = '[J]ump' },
       },
     },
   },

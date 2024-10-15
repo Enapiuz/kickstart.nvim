@@ -5,6 +5,6 @@ return {
     require('hop').setup {
       keys = 'etovxqpdygfblzhckisuran',
     }
-    vim.keymap.set('n', '<leader>hh', ':HopWord<CR>', { desc = 'Hop Word' })
+    vim.keymap.set('n', '<leader>jj', ':HopWord<CR>', { desc = 'Hop Word' })
   end,
 }
